@@ -1,0 +1,15 @@
+ex00:
+ Comando:
+ - echo 'Z\n' > z
+ Explicação
+  - Echo serve para escrever dentro do ficheiro, 'Z\n' é o output,  	 \n serve para fazer quebra de linha por fim o > z serve para criar  ficheiro com o nome z.
+  
+ex01:
+ - echo > testShell00
+ - nano testShell00 ou abrir através de um editor de texto
+ - Escrever dentro do editor até a contagem de caracteres ser 40
+ - touch -a -m -t 20260601 testShell00
+ Explicação:
+ - nano serve para poder abrir o ficheiro e edita-lo dentro da shell; touch serve para poder editar quando o ficheiro foi editado;
+ touch -a serve para mudar a data de acesso, -m a data de modificação e por fim -t para mudar a hora/data para a data pretendida.
+ 
