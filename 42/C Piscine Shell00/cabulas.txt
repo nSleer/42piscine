@@ -23,3 +23,16 @@ ex01:
 2 write only -w-
 1 execute only --x
 0 none ---
+
+ex02:
+  - echo -> criar ficheiros
+  - mkdir -> criar pastas
+  - chmod -> trocar permissões de ficheiro
+  - ln -> criar hardlink
+  - ln -s -> criar softlink
+
+ex04:
+  - echo "ls -p -u -m" > midLS
+  - chmod u+x midLS -> mudar as permissões para user(u) e para todos (x)
+  - executar: ./midLS
+
