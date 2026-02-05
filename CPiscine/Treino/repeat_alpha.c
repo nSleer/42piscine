@@ -26,16 +26,17 @@ void repeat_alpha(char *str)
 
         if (str[i] >= 'a' && str[i] <= 'z')
         {
-            rep = str[i] - 'a' - 1;
+            rep = str[i] - 'a' + 1;
         }
         else if (str[i] >= 'A' && str[i] <= 'Z')
         {
-            rep = str[i] - 'A' - 1;
+            rep = str[i] - 'A' + 1;
         }
         else
         {
            write(1, &str[i], 1);
            i++;
+           continue;
         }
 
         j = 0;
@@ -51,4 +52,9 @@ void repeat_alpha(char *str)
 
     write(1, "\n", 1);
     
+}
+
+int main(void){
+    repeat_alpha("abcde42!!");
+    return 0;
 }
