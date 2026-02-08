@@ -1,5 +1,5 @@
 #include "rush01.h"
-
+// Function to parse the input string and fill the clues array
 int	parse_input(char *input, int *clues)
 {
 	int i;
@@ -22,7 +22,7 @@ int	parse_input(char *input, int *clues)
 	}
 	return (i == SIZE * SIZE);
 }
-
+// Function to check if a number can be placed in the given row and column
 int	ft_rowchecker(int grid[SIZE][SIZE], int row, int num)
 {
 	int col = 0;
@@ -34,7 +34,7 @@ int	ft_rowchecker(int grid[SIZE][SIZE], int row, int num)
 	}
 	return (1);
 }
-
+// Function to check if a number can be placed in the given column
 int	ft_colchecker(int grid[SIZE][SIZE], int col, int num)
 {
 	int row = 0;
@@ -46,12 +46,12 @@ int	ft_colchecker(int grid[SIZE][SIZE], int col, int num)
 	}
 	return (1);
 }
-
+// Function to check if a number can be placed in the grid at the given position
 int	can_place(int grid[SIZE][SIZE], int row, int col, int num)
 {
 	return (ft_rowchecker(grid, row, num) && ft_colchecker(grid, col, num));
 }
-
+// Function to count the number of visible buildings in a line
 int	count_visible(int *line)
 {
 	int i = 0;
@@ -69,7 +69,7 @@ int	count_visible(int *line)
 	}
 	return (visible);
 }
-
+// Function to check if the current row satisfies the clues
 int	check_row(int grid[SIZE][SIZE], int *clues, int row)
 {
 	int line[SIZE];
@@ -90,7 +90,7 @@ int	check_row(int grid[SIZE][SIZE], int *clues, int row)
 	}
 	return (count_visible(line) == clues[row + SIZE * 3]);
 }
-
+// Function to check if the current column satisfies the clues
 int	check_col(int grid[SIZE][SIZE], int *clues, int col)
 {
 	int line[SIZE];

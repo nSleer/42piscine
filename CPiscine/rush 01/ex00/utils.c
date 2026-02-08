@@ -22,7 +22,7 @@ void	print_error(void)
 {
 	write(1, "Error\n", 6);
 }
-
+// Function to print the grid in the required format
 void	print_grid(int grid[SIZE][SIZE])
 {
 	int i;
@@ -43,7 +43,7 @@ void	print_grid(int grid[SIZE][SIZE])
 		i++;
 	}
 }
-
+// Function to initialize the grid with zeros
 void	init_data(int grid[SIZE][SIZE])
 {
 	int i;
