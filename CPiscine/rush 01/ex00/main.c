@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_print.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/05 22:59:20 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/05 22:59:20 by marvin           ###   ########.fr       */
+/*   Created: 2026/02/08 14:00:56 by marvin            #+#    #+#             */
+/*   Updated: 2026/02/08 14:00:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 
-void rev_print(char *str)
+#include "rush01.h"
+// Main function to initialize data, parse input, solve the puzzle, and print the result
+int	main(int argc, char **argv)
 {
-    int	i;
+	int grid[SIZE][SIZE];
+	int clues[SIZE * SIZE];
 
-	i = 0;
-	while (str[i] != '\0')
+	if (argc != 2 || !parse_input(argv[1], clues))
 	{
-		i++;
+		print_error();
+		return (0);
 	}
-	while (i > 0)
-    {
-        i--;
-        write(1, &str[i], 1);
-    }
-    write(1, "\n" ,1);
-    
+
+	init_data(grid);
+	if (!ft_solve(grid, clues, 0))
+	{
+		print_error();
+		return (0);
+	}
+
+	print_grid(grid);
+	return (0);
 }
