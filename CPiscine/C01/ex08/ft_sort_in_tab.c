@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ft_rev_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_sort_in_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 15:36:49 by jcosta-r          #+#    #+#             */
-/*   Updated: 2026/02/03 15:37:59 by jcosta-r         ###   ########.fr       */
+/*   Created: 2026/02/09 14:26:36 by marvin            #+#    #+#             */
+/*   Updated: 2026/02/09 14:26:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_rev_int_tab(int *tab, int size)
+void    ft_sort_in_tab(int *tab, int size)
 {
     int i;
+    int j;
     int temp;
 
     i = 0;
-    while (i < size / 2)
+    while (i < size - 1)
     {
-        temp = tab[i];
-        tab[i] = tab[size - 1 - i];
-        tab[size - 1 - i] = temp;
+        j = 0;
+        while (j < size - 1 - i)
+        {
+            if (tab[j] > tab[j + 1])
+            {
+                temp = tab[j];
+                tab[j] = tab[j + 1];
+                tab[j + 1] = temp;
+            }
+            j++;
+        }
         i++;
     }
 }
 
-
 int	main(void)
 {
-	int		tab[5] = {1, 2, 3, 4, 5};
+	int		tab[5] = {5, 3, 1, 4, 2};
 	int		i;
 	char	c;
 
-	ft_rev_int_tab(tab, 5);
+	ft_sort_in_tab(tab, 5);
 	i = 0;
 	while (i < 5)
 	{

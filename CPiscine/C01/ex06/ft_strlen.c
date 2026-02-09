@@ -23,3 +23,14 @@ int	ft_strlen(char *str)
 	}
 	return (i);
 }
+
+int	main(void)
+{
+	char	str[] = "Hello";
+	int		len;
+
+	len = ft_strlen(str);
+	write(1, &"0123456789"[len], 1);
+	write(1, "\n", 1);
+	return (0);
+}

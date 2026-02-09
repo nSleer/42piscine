@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ft_rev_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 15:36:49 by jcosta-r          #+#    #+#             */
-/*   Updated: 2026/02/03 15:37:59 by jcosta-r         ###   ########.fr       */
+/*   Created: 2026/02/09 14:41:56 by marvin            #+#    #+#             */
+/*   Updated: 2026/02/09 14:41:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_rev_int_tab(int *tab, int size)
+char    *ft_strcpy(char *dest, const char *src)
 {
-    int i;
-    int temp;
+    int	i;
 
     i = 0;
-    while (i < size / 2)
+    while (src[i] != '\0')
     {
-        temp = tab[i];
-        tab[i] = tab[size - 1 - i];
-        tab[size - 1 - i] = temp;
+        dest[i] = src[i];
         i++;
     }
+    dest[i] = '\0';
+    return (dest);
 }
-
 
 int	main(void)
 {
-	int		tab[5] = {1, 2, 3, 4, 5};
+	char	src[] = "Hello";
+	char	dest[6];
 	int		i;
 	char	c;
 
-	ft_rev_int_tab(tab, 5);
+	ft_strcpy(dest, src);
 	i = 0;
-	while (i < 5)
+	while (dest[i])
 	{
-		c = tab[i] + '0';
+		c = dest[i];
 		write(1, &c, 1);
 		i++;
 	}

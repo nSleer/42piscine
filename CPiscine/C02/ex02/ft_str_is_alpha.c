@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ft_putnbr.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/04 15:10:17 by jcosta-r          #+#    #+#             */
-/*   Updated: 2026/02/04 15:43:53 by jcosta-r         ###   ########.fr       */
+/*   Created: 2026/02/09 14:51:35 by marvin            #+#    #+#             */
+/*   Updated: 2026/02/09 14:51:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putnbr(int nb)
+int    ft_str_is_alpha(char *str)
 {
-    long n;
-    char c;
+    int	i;
 
-    n = nb;
-    if (n < 0)
+    i = 0;
+    while (str[i])
     {
-        write(1, "-", 1);
-        n = -n;
+        if (!((str[i] >= 'A' && str[i] <= 'Z') ||
+              (str[i] >= 'a' && str[i] <= 'z')))
+            return (0);
+        i++;
     }
-    if (n >= 10){
-        ft_putnbr(n / 10);
-    }
-    c = (n % 10) + '0';
-    write(1, &c, 1);
+    return (1);
 }
