@@ -25,3 +25,12 @@ char    *ft_strupcase(char *str)
     }
     return (str);
 }
+
+/* 
+int	main(void)
+{
+	char	str[] = "all is lowercase";
+
+	printf("Before: %s\n", str);
+	printf("After: %s\n", ft_strupcase(str));
+} */

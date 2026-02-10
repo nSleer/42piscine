@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:05:15 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/09 15:05:15 by marvin           ###   ########.fr       */
+/*   Created: 2026/02/10 23:12:44 by marvin            #+#    #+#             */
+/*   Updated: 2026/02/10 23:12:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
-char    *ft_strlowcase(char *str)
+int ft_strcmp(char *s1, char *s2)
 {
-    int	i;
+    int i;
 
     i = 0;
-    while (str[i])
+    while ((s1[i] || s2[i]) && (s1[i] == s2[i]))
     {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] += 32;
         i++;
     }
-    return (str);
+    return (s1[i] - s2[i]);
+    
 }
 
 /* 
 int	main(void)
 {
-	char	str[] = "ALL IS UPPERCASE";
+	char	*s1 = "word";
+	char	*s2 = "Word";
 
-	printf("Before: %s\n", str);
-	printf("After: %s\n", ft_strlowcase(str));
+	printf("My: %d\n", ft_strcmp(s1, s2));
 } */

@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:05:15 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/09 15:05:15 by marvin           ###   ########.fr       */
+/*   Created: 2026/02/10 23:21:56 by marvin            #+#    #+#             */
+/*   Updated: 2026/02/10 23:21:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
-char    *ft_strlowcase(char *str)
+char *ft_strcat(char *dest, char *src)
 {
-    int	i;
+    int i;
+    int j;
 
     i = 0;
-    while (str[i])
+    j = 0;
+    while (dest[i] != '\0')
     {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] += 32;
         i++;
     }
-    return (str);
+    while (src[j] != '\0')
+    {
+        dest[i] = src[j];
+        i++;
+        j++;
+    }
+    dest[i] = '\0';
+    return (dest);
+    
 }
 
 /* 
 int	main(void)
 {
-	char	str[] = "ALL IS UPPERCASE";
+	char	dest[10] = "dest";
+	char	src[10] = "src";
 
-	printf("Before: %s\n", str);
-	printf("After: %s\n", ft_strlowcase(str));
+	ft_strcat(dest, src);
+	printf("String: %s\n", dest);
 } */

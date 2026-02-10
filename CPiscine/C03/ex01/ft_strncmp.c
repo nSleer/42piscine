@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:05:15 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/09 15:05:15 by marvin           ###   ########.fr       */
+/*   Created: 2026/02/10 23:17:00 by marvin            #+#    #+#             */
+/*   Updated: 2026/02/10 23:17:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
-char    *ft_strlowcase(char *str)
+int ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-    int	i;
+    unsigned int i;
 
     i = 0;
-    while (str[i])
+    while (i < n && (s1[i] || s2[i]) && (s1[i] == s2[i]))
     {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] += 32;
         i++;
     }
-    return (str);
+    if (i == n)
+        return (0);
+    return (s1[i] - s2[i]);
+    
 }
 
 /* 
-int	main(void)
+int	main()
 {
-	char	str[] = "ALL IS UPPERCASE";
+	char s1[] = "word";
+	char s2[] = "Word";
+	int n = 2;
 
-	printf("Before: %s\n", str);
-	printf("After: %s\n", ft_strlowcase(str));
+	printf("Or: %d\n", strncmp(s1, s2, n));
+	printf("My: %d\n", ft_strncmp(s1, s2, n));
 } */

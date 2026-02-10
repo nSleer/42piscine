@@ -36,3 +36,12 @@ char    *ft_strcapitalize(char *str)
     }
     return (str);
 }
+
+/* 
+int	main(void)
+{
+	char	str[] = "OLA, tudo BEM? 42palavras QUARENTA-e-duas; cinquenta+E+UM";
+
+	printf("Before: %s\n", str);
+	printf("After: %s\n", ft_strcapitalize(str));
+} */
