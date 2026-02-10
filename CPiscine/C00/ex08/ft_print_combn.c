@@ -12,51 +12,43 @@
 
 #include <unistd.h>
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
 
-void    ft_comb_num(int *num, int n)
+void	ft_print_combn(int n)
 {
-    int i;
+	int	num[10];
+	int	i;
 
-    i = 0;
-    while (i < n)
-    {
-        ft_putchar(num[i] + '0');
-        i++;
-    }
-}
+	if (n <= 0 || n >= 10)
+		return ;
 
-void    ft_print_combn(int n)
-{
-    int num[10];
-    int i;
+	i = 0;
+	while (i < n)
+	{
+		num[i] = i;
+		i++;
+	}
 
-    if (n <= 0 || n >= 10)
-        return ;
-    i = 0;
-    while (i < n)
-    {
-        num[i] = i;
-        i++;
-    }
-    while (num[0] <= 10 - n)
-    {
-        ft_comb_num(num, n);
-        if (num[0] < 10 - n)
-        {
-            ft_putchar(',');
-            ft_putchar(' ');
-        }
-        num[n - 1]++;
-        i = n - 1;
-        while (i > 0 && num[i] > 9 - (n - 1 - i))
-        {
-            i--;
-            num[i]++;
-            num[i + 1] = num[i] + 1;
-        }
-    }
+	while (1)
+	{
+		i = 0;
+		while (i < n)
+			ft_putchar(num[i++] + '0');
+		if (num[0] == 10 - n)
+			break ;
+		ft_putchar(',');
+		ft_putchar(' ');
+
+		i = n - 1;
+		num[i]++;
+		while (i > 0 && num[i] > 9 - (n - 1 - i))
+		{
+			num[i - 1]++;
+			num[i] = num[i - 1] + 1;
+			i--;
+		}
+	}
 }
