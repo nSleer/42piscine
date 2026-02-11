@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 23:17:00 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/11 13:27:30 by jcosta-r         ###   ########.fr       */
+/*   Created: 2026/02/11 16:43:56 by jcosta-r          #+#    #+#             */
+/*   Updated: 2026/02/11 16:44:17 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+void	ft_putnbr(int nb)
 {
-	unsigned int	i;
+	long	n;
+	char	c;
 
-	i = 0;
-	while (i < n && (s1[i] || s2[i]) && (s1[i] == s2[i]))
+	n = nb;
+	if (n < 0)
 	{
-		i++;
+		write(1, "-", 1);
+		n = -n;
 	}
-	if (i == n)
-		return (0);
-	return (s1[i] - s2[i]);
+	if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+	}
+	c = (n % 10) + '0';
+	write(1, &c, 1);
 }
-
-/* 
-int	main()
-{
-	char s1[] = "word";
-	char s2[] = "Word";
-	int n = 2;
-
-	printf("Or: %d\n", strncmp(s1, s2, n));
-	printf("My: %d\n", ft_strncmp(s1, s2, n));
-} */

@@ -1,38 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 23:17:00 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/11 13:27:30 by jcosta-r         ###   ########.fr       */
+/*   Created: 2026/02/11 15:29:49 by jcosta-r          #+#    #+#             */
+/*   Updated: 2026/02/11 16:36:08 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+unsigned int	ft_strlen(char *str)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (i < n && (s1[i] || s2[i]) && (s1[i] == s2[i]))
-	{
+	while (str[i])
 		i++;
-	}
-	if (i == n)
-		return (0);
-	return (s1[i] - s2[i]);
+	return (i);
 }
 
-/* 
-int	main()
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	char s1[] = "word";
-	char s2[] = "Word";
-	int n = 2;
+	unsigned int	lend;
+	unsigned int	lens;
+	unsigned int	r;
+	unsigned int	i;
 
-	printf("Or: %d\n", strncmp(s1, s2, n));
-	printf("My: %d\n", ft_strncmp(s1, s2, n));
-} */
+	lend = ft_strlen(dest);
+	lens = ft_strlen(src);
+	r = 0;
+	if (size > lend)
+		r = lens + lend;
+	else
+		r = lens + size;
+	i = 0;
+	while (src[i] && lend <= size)
+	{
+		dest[lend] = src[i];
+		lend++;
+		i++;
+	}
+	dest[lend] = '\0';
+	return (r);
+}

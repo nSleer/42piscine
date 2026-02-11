@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 23:17:00 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/11 13:27:30 by jcosta-r         ###   ########.fr       */
+/*   Created: 2026/02/11 18:21:07 by jcosta-r          #+#    #+#             */
+/*   Updated: 2026/02/11 18:45:35 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_atoi(char *str)
 {
-	unsigned int	i;
+	int	i;
+	int	sign;
+	int	result;
 
 	i = 0;
-	while (i < n && (s1[i] || s2[i]) && (s1[i] == s2[i]))
+	sign = 1;
+	result = 0;
+	while ((str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
 	{
 		i++;
 	}
-	if (i == n)
-		return (0);
-	return (s1[i] - s2[i]);
+	while (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+		{
+			sign *= -1;
+		}
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }
-
-/* 
-int	main()
-{
-	char s1[] = "word";
-	char s2[] = "Word";
-	int n = 2;
-
-	printf("Or: %d\n", strncmp(s1, s2, n));
-	printf("My: %d\n", ft_strncmp(s1, s2, n));
-} */

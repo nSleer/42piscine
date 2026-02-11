@@ -3,48 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 21:35:16 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/10 21:35:16 by marvin           ###   ########.fr       */
+/*   Updated: 2026/02/11 13:26:40 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
 
-void    ft_hexcalc(unsigned char c)
+void	ft_hexcalc(unsigned char e)
 {
-    char    *hex;
+	char	*hex;
 
-    hex = "0123456789abcdef";
-    ft_putchar(hex[c / 16]);
-    ft_putchar(hex[c % 16]);
+	hex = "0123456789abcdef";
+	ft_putchar(hex[e / 16]);
+	ft_putchar(hex[e % 16]);
 }
 
-void ft_putstr_non_printable(char *str)
+void	ft_putstr_non_printable(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] < 32 || str[i] == 127)
-        {
-            ft_putchar("\\");
-            ft_hexcalc(str[i]);
-        }
-        else 
-        {
-            ft_putchar(str[i]);
-        }
-        i++;
-        
-    }
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] < 32 || str[i] == 127)
+		{
+			ft_putchar('\\');
+			ft_hexcalc(str[i]);
+		}
+		else
+		{
+			ft_putchar(str[i]);
+		}
+		i++;
+	}
 }
 
 /*  

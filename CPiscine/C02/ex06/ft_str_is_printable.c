@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:57:44 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/09 14:57:44 by marvin           ###   ########.fr       */
+/*   Updated: 2026/02/11 13:22:32 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int    ft_str_is_printable(char *str)
+int	ft_str_is_printable(char *str)
 {
-    int	i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-    {
-        if (!(str[i] >= 33 && str[i] <= 126))
-            return (0);
-        i++;
-    }
-    return (1);
+	i = 0;
+	while (str[i])
+	{
+		if (!(str[i] >= 33 && str[i] <= 126))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 /* 

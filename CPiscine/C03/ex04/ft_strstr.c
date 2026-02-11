@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 23:17:00 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/11 13:27:30 by jcosta-r         ###   ########.fr       */
+/*   Created: 2026/02/11 14:44:04 by jcosta-r          #+#    #+#             */
+/*   Updated: 2026/02/11 15:24:53 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int	i;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (i < n && (s1[i] || s2[i]) && (s1[i] == s2[i]))
+
+	if (to_find[0] == '\0')
 	{
+		return (str);
+	}
+	while (str[i])
+	{
+		j = 0;
+		while (str[i + j] == to_find[j])
+		{
+			if (to_find[j + 1] == '\0')
+			{
+				return (&str[i]);
+			}
+			j++;
+		}
 		i++;
 	}
-	if (i == n)
-		return (0);
-	return (s1[i] - s2[i]);
+	return (NULL);
 }
-
-/* 
-int	main()
-{
-	char s1[] = "word";
-	char s2[] = "Word";
-	int n = 2;
-
-	printf("Or: %d\n", strncmp(s1, s2, n));
-	printf("My: %d\n", ft_strncmp(s1, s2, n));
-} */

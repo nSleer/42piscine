@@ -3,26 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 23:12:44 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/10 23:12:44 by marvin           ###   ########.fr       */
+/*   Updated: 2026/02/11 13:27:11 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while ((s1[i] || s2[i]) && (s1[i] == s2[i]))
-    {
-        i++;
-    }
-    return (s1[i] - s2[i]);
-    
+	i = 0;
+	while ((s1[i] || s2[i]) && (s1[i] == s2[i]))
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }
 
 /* 
