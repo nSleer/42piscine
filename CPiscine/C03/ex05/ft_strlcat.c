@@ -31,18 +31,18 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 
 	lend = ft_strlen(dest);
 	lens = ft_strlen(src);
-	r = 0;
-	if (size > lend)
-		r = lens + lend;
-	else
-		r = lens + size;
-	i = 0;
-	while (src[i] && lend <= size)
+	if (size <= lend)
 	{
-		dest[lend] = src[i];
-		lend++;
+		return (size + lens);
+	}
+	r = lend + lens;
+	i = 0;
+	while (src[i] && lend + i < size - 1)
+	{
+		dest[lend + i] = src[i];
 		i++;
 	}
-	dest[lend] = '\0';
+	dest[lend + i] = '\0';
+
 	return (r);
 }
