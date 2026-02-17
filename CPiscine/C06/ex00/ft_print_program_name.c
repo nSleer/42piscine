@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/15 16:37:06 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/15 16:37:06 by marvin           ###   ########.fr       */
+/*   Created: 2026/02/17 19:53:27 by marvin            #+#    #+#             */
+/*   Updated: 2026/02/17 19:53:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int is_prime(int nb)
+int main(int argc, char **argv)
 {
-    if (nb <= 1)
-        return 0;
-    for (int i = 2; i * i <= nb; i++)
-    {
-        if (nb % i == 0)
-            return 0;
-    }
-    return 1;
-}
+    int i;
 
-int ft_find_next_prime(int nb)
-{
-    while (!is_prime(nb))
+    i = 0;
+    while (argv[0][i] != '\0')
     {
-        nb++;
+        write(1, &argv[0][i], 1);
+        i++;
     }
-    return nb;
+    write(1, "\n", 1);
+    return 0;
 }
