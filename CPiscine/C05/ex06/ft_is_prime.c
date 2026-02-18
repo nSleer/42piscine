@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 16:36:06 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/15 16:36:06 by marvin           ###   ########.fr       */
+/*   Updated: 2026/02/16 17:06:34 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int    ft_is_prime(int nb)
+int	ft_is_prime(int nb)
 {
-    int	i;
+	int	i;
 
-    if (nb <= 1)
-        return (0);
-    i = 2;
-    while (i * i <= nb)
-    {
-        if (nb % i == 0)
-            return (0);
-        i++;
-    }
-    return (1);
+	i = 2;
+	if (nb <= 1)
+		return (0);
+	while (i * i <= nb)
+	{
+		if (nb % i == 0)
+			return (0);
+		i++;
+	}
+	return (1);
 }

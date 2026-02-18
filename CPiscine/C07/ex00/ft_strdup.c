@@ -1,22 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/15 15:17:53 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/16 17:06:52 by jcosta-r         ###   ########.fr       */
+/*   Created: 2026/02/18 15:43:21 by jcosta-r          #+#    #+#             */
+/*   Updated: 2026/02/18 16:25:58 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <string.h>
 
-int	ft_recursive_factorial(int nb)
+int	ft_strlen(char *str)
 {
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	return (nb * ft_recursive_factorial(nb - 1));
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+char	*ft_strdup(char *src)
+{
+	int		i;
+	int		len;
+	char	*c;
+
+	i = 0;
+	len = ft_strlen(src);
+	c = malloc(len + 1);
+	if (c == NULL)
+		return (NULL);
+	while (src[i] != '\0')
+	{
+		c[i] = src[i];
+		i++;
+	}
+	c[i] = '\0';
+	return (c);
 }
