@@ -3,13 +3,13 @@ _____________________________
 1-ft_print_numbers - Done
 ____________________
 2-fizzbuzz - Done
-3-rev_print - 
-4-aff_last_param
-5-ulstr
-6-ft_strcpy
+3-rev_print - Done
+4-aff_last_param - Done
+5-ulstr - Done
+6-ft_strcpy - Done
 _____________________
-7-ft_strrev
-8-ft_atoi
+7-ft_strrev - Done
+8-ft_atoi - Done
 9-union
 _________________
 10- ft_range
