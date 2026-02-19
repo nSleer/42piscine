@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 16:27:11 by jcosta-r          #+#    #+#             */
-/*   Updated: 2026/02/19 13:26:29 by jcosta-r         ###   ########.fr       */
+/*   Created: 2026/02/03 15:36:49 by jcosta-r          #+#    #+#             */
+/*   Updated: 2026/02/11 13:10:17 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <string.h>
 
-// int	ft_strlen(char *str)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (str[i])
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
-
-int	*ft_range(int min, int max)
+void	ft_rev_int_tab(int *tab, int size)
 {
 	int	i;
+	int	temp;
 
 	i = 0;
-	if (min > max)
-		return (NULL);
-	
+	while (i < size / 2)
+	{
+		temp = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = temp;
+		i++;
+	}
 }
+
+// int	main(void)
+// {
+// 	int		tab[5] = {1, 2, 3, 4, 5};
+// 	int		i;
+// 	char	c;
+
+// 	ft_rev_int_tab(tab, 5);
+// 	i = 0;
+// 	while (i < 5)
+// 	{
+// 		c = tab[i] + '0';
+// 		write(1, &c, 1);
+// 		i++;
+// 	}
+// 	write(1, "\n", 1);
+// 	return (0);
+// }

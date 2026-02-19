@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   aff_z.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 16:27:11 by jcosta-r          #+#    #+#             */
-/*   Updated: 2026/02/19 13:26:29 by jcosta-r         ###   ########.fr       */
+/*   Created: 2026/02/19 15:13:20 by jcosta-r          #+#    #+#             */
+/*   Updated: 2026/02/19 15:18:33 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <string.h>
 
-// int	ft_strlen(char *str)
-// {
-// 	int	i;
+int main(int argc, char **argv){
+	(void) argc;
+	(void) argv;
 
-// 	i = 0;
-// 	while (str[i])
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
-
-int	*ft_range(int min, int max)
-{
-	int	i;
-
-	i = 0;
-	if (min > max)
-		return (NULL);
-	
+	write(1, "z\n", 2);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:45:29 by jcosta-r          #+#    #+#             */
-/*   Updated: 2026/02/03 15:33:17 by jcosta-r         ###   ########.fr       */
+/*   Updated: 2026/02/11 12:58:07 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	main(void)
-{
-	char	str[] = "Hello";
-	int		len;
+// int	main(void)
+// {
+// 	char	str[] = "Hello";
+// 	int		len;
 
-	len = ft_strlen(str);
-	write(1, &"0123456789"[len], 1);
-	write(1, "\n", 1);
-	return (0);
-}
+// 	len = ft_strlen(str);
+// 	write(1, &"0123456789"[len], 1);
+// 	write(1, "\n", 1);
+// 	return (0);
+// }

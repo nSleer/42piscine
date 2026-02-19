@@ -1,0 +1,24 @@
+_____________________________
+0-aff_z - Done
+1-ft_print_numbers - Done
+____________________
+2-fizzbuzz - Done
+3-rev_print - 
+4-aff_last_param
+5-ulstr
+6-ft_strcpy
+_____________________
+7-ft_strrev
+8-ft_atoi
+9-union
+_________________
+10- ft_range
+_________________
+11-ft_split
+12-sort_list
+13-count_alpha
+_________________
+14-str_maxlenoc
+15-count_island
+
+https://github.com/Foullane-Mohamed/1337-Piscine-42-main-exercice-and-exame/blob/main/EXAM03/EXAM.txt

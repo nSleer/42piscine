@@ -6,7 +6,7 @@
 /*   By: jcosta-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:29:49 by jcosta-r          #+#    #+#             */
-/*   Updated: 2026/02/18 15:17:56 by jcosta-r         ###   ########.fr       */
+/*   Updated: 2026/02/19 15:37:17 by jcosta-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,15 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	return (og_lend + lens);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main(void)
-{
-    char buf[10] = "teste  ";
-    char *src = "1234515";
+// int main(void)
+// {
+//     char buf[10] = "teste  ";
+//     char *src = "1234515";
 
-    unsigned int ret = ft_strlcat(buf, src, sizeof(buf));
-    printf("buf = %s, return = %u\n", buf, ret);
+//     unsigned int ret = ft_strlcat(buf, src, sizeof(buf));
+//     printf("buf = %s, return = %u\n", buf, ret);
 
-    return 0;
-}
-
+//     return 0;
+// }
